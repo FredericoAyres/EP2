@@ -91,3 +91,25 @@ def calcula_pontos_quina(lista):
         return 50
     else:
         return 0
+
+def calcula_pontos_regra_avancada(lista):
+    dicionario = {'cinco_iguais': 0, 'full_house': 0, 'quadra': 0, 'sem_combinacao': 0, 'sequencia_alta': 0, 'sequencia_baixa': 0}
+    a = calcula_pontos_quina(lista)
+    if a != 0:
+        dicionario['cinco_iguais'] = a
+    b = calcula_pontos_full_house(lista)
+    if b != 0:
+        dicionario['full_house'] = b
+    c = calcula_pontos_quadra(lista)
+    if c != 0:
+        dicionario['quadra'] = c
+    d = calcula_pontos_soma(lista)
+    if d != 0:
+        dicionario['sem_combinacao'] = d
+    e = calcula_pontos_sequencia_alta(lista)
+    if e != 0:
+        dicionario['sequencia_alta'] = e
+    f = calcula_pontos_sequencia_baixa(lista)
+    if f != 0:
+        dicionario['sequencia_baixa'] = f
+    return dicionario
