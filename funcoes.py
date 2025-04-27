@@ -113,3 +113,13 @@ def calcula_pontos_regra_avancada(lista):
     if f != 0:
         dicionario['sequencia_baixa'] = f
     return dicionario
+
+def faz_jogada(lista, string, dicionario):
+    if string == '1' or string == '2' or string == '3'or string == '4' or string == '5' or string == '6':
+        x = calcula_pontos_regra_simples(lista)
+        y = int(string)
+        dicionario['regra_simples'][y] = x[y]
+    else:
+        x = calcula_pontos_regra_avancada(lista)
+        dicionario['regra_avancada'][string] = x[string]
+    return dicionario
