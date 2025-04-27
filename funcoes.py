@@ -18,3 +18,13 @@ def remover_dado(dados_rolados, dados_no_estoque, indice):
     del dados_no_estoque[indice]
     lista = [dados_rolados, dados_no_estoque]
     return lista
+
+def calcula_pontos_regra_simples(lista):
+    dicionario = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    for i in lista:
+        soma = 0
+        for j in lista:
+            if j == i:
+                soma += j
+        dicionario[i] = soma
+    return dicionario
