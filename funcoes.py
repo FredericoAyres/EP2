@@ -63,3 +63,18 @@ def calcula_pontos_full_house(lista):
         return soma
     else:
         return 0
+
+def calcula_pontos_quadra(lista):
+    qnt = [0, 0, 0, 0, 0, 0]
+    soma = 0
+    for x in lista:
+        qnt[x-1] += 1
+        soma += x
+    qnt_max = 0
+    for y in qnt:
+        if y > qnt_max:
+            qnt_max = y
+    if qnt_max >= 4:
+        return soma
+    else:
+        return 0
