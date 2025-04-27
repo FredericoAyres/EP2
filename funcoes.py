@@ -78,3 +78,16 @@ def calcula_pontos_quadra(lista):
         return soma
     else:
         return 0
+
+def calcula_pontos_quina(lista):
+    qnt = [0, 0, 0, 0, 0, 0]
+    for x in lista:
+        qnt[x-1] += 1
+    qnt_max = 0
+    for y in qnt:
+        if y > qnt_max:
+            qnt_max = y
+    if qnt_max >= 5:
+        return 50
+    else:
+        return 0
